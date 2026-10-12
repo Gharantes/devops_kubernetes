@@ -47,11 +47,11 @@ Python 3.14.5 / Docker 29.5.2 / Minikube v1.39.0
 
 ### Etapa 5: ConfigMap
 
-**Comando:** 
+**Comando:** `.\scripts\kube.ps1 rollout restart deployment/entrega`
 
 **Esperado:** Mensagem muda após recriar Pods
 
-**Observado:** 
+**Observado:** Após recriar os Pods, `/api/status` retorna `"version": "v1"`, `"message": "Entrega configurada pelo grupo."`
 
 ### Etapa 6: Atualização v2
 
