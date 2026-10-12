@@ -4,7 +4,7 @@ metadata:
   name: entrega
   namespace: aula-k8s
 spec:
-  replicas: 2
+  replicas: 3
   revisionHistoryLimit: 5
   progressDeadlineSeconds: 90
   minReadySeconds: 3

@@ -29,11 +29,11 @@ Python 3.14.5 / Docker 29.5.2 / Minikube v1.39.0
 
 ### Etapa 3: Escala
 
-**Comando:** 
+**Comando:** `.\scripts\kube.ps1 get pods -l app=entrega`
 
 **Esperado:** 3 Pods prontos
 
-**Observado:** 
+**Observado:** 3 Pods `1/1 Running`; os 2 antigos mantidos e 1 novo criado
 
 ### Etapa 4: Exclusão e recuperação
 
