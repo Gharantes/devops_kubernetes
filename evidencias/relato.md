@@ -37,11 +37,13 @@ Python 3.14.5 / Docker 29.5.2 / Minikube v1.39.0
 
 ### Etapa 4: Exclusão e recuperação
 
-**Comando:** 
+**Comando:** `.\scripts\kube.ps1 delete pod $podAntigo --wait=true`
 
 **Esperado:** Nome antigo removido; novo Pod criado
 
-**Observado:** 
+**Observado:** `entrega-5c8cd478b5-p6wc8` removido; novo Pod `entrega-5c8cd478b5-5zvlq` criado; 3 Pods `1/1 Running`
+
+![](./assets/print-etapa-04.PNG)
 
 ### Etapa 5: ConfigMap
 
