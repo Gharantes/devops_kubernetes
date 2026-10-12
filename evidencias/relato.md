@@ -1,6 +1,6 @@
 # Relato do grupo
 
-Integrantes: Gharantes
+Integrantes: Guilherme Harmatiuk Arantes
 Data: 12/10/2026
 Distribuição Linux:
 Python 3.14.5 / Docker 29.5.2 / Minikube v1.39.0
