@@ -7,17 +7,79 @@ Python 3.14.5 / Docker 29.5.2 / Minikube v1.39.0
 
 ## Etapas
 
-| Etapa | Comando e evidência | Resultado esperado | Resultado observado e explicação |
-|---|---|---|---|
-| Testes | `python -m unittest discover -s tests -v` | 8 testes OK | `Ran 8 tests` / `OK` |
-| Publicação v1 | `kube.ps1 get pods -l app=entrega` | 2 Pods prontos; API v1 | 2 Pods `1/1 Running`; `/api/status` retorna `"version": "v1"` |
-| Escala | | 3 Pods prontos | |
-| Exclusão e recuperação | | Nome antigo removido; novo Pod criado | |
-| ConfigMap | | Mensagem muda após recriar Pods | |
-| Atualização v2 | | 3 Pods v2 prontos | |
-| Incidente | | Novo Running 0/1; healthz 200, readyz 503 | |
-| Rollback | | v2 restaurada | |
-| Pipeline v3 | | Smoke OK e estado final v3 | |
+### Etapa 1: Testes
+
+**Comando:** `python -m unittest discover -s tests -v`
+
+**Esperado:** 8 testes OK
+
+**Observado:** `Ran 8 tests` / `OK`
+
+### Etapa 2: Publicação v1
+
+**Comando:** `.\scripts\kube.ps1 get pods -l app=entrega -o wide`
+
+**Esperado:** 2 Pods prontos; API v1
+
+**Observado:** 2 Pods `1/1 Running`; `/api/status` retorna `"version": "v1"`
+
+![](./assets/print-etapa-02.PNG)
+
+### Etapa 3: Escala
+
+**Comando:** 
+
+**Esperado:** 3 Pods prontos
+
+**Observado:** 
+
+### Etapa 4: Exclusão e recuperação
+
+**Comando:** 
+
+**Esperado:** Nome antigo removido; novo Pod criado
+
+**Observado:** 
+
+### Etapa 5: ConfigMap
+
+**Comando:** 
+
+**Esperado:** Mensagem muda após recriar Pods
+
+**Observado:** 
+
+### Etapa 6: Atualização v2
+
+**Comando:** 
+
+**Esperado:** 3 Pods v2 prontos
+
+**Observado:** 
+
+### Etapa 7: Incidente
+
+**Comando:** 
+
+**Esperado:** Novo Running 0/1; healthz 200, readyz 503
+
+**Observado:** 
+
+### Etapa 8: Rollback
+
+**Comando:** 
+
+**Esperado:** v2 restaurada
+
+**Observado:** 
+
+### Etapa 9: Pipeline v3
+
+**Comando:** 
+
+**Esperado:** Smoke OK e estado final v3
+
+**Observado:** 
 
 ## Respostas
 
