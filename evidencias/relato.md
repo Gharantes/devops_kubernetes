@@ -1,9 +1,9 @@
 # Relato do grupo
 
-Integrantes:
-Data:
+Integrantes: Gharantes
+Data: 12/10/2026
 Distribuição Linux:
-Python / Docker / Minikube:
+Python 3.14.5 / Docker 29.5.2 / Minikube v1.39.0
 
 ## Etapas
 
