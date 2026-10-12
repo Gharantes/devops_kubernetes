@@ -23,7 +23,9 @@ Python 3.14.5 / Docker 29.5.2 / Minikube v1.39.0
 
 **Observado:** 2 Pods `1/1 Running`; `/api/status` retorna `"version": "v1"`
 
-![](./assets/print-etapa-02.PNG)
+![](./assets/print-etapa-02-1.PNG)
+
+![](./assets/print-etapa-02-2.PNG)
 
 ### Etapa 3: Escala
 
