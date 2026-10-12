@@ -9,7 +9,7 @@ Python 3.14.5 / Docker 29.5.2 / Minikube v1.39.0
 
 | Etapa | Comando e evidência | Resultado esperado | Resultado observado e explicação |
 |---|---|---|---|
-| Testes | | 8 testes OK | |
+| Testes | Comando: <br>`python -m unittest discover -s tests -v` <br><br> Saída: <br>`Ran 8 tests in 0.278s` / `OK` | 8 testes OK | 8 testes executados, todos `ok` Confirma que a aplicação responde corretamente antes de gerar a imagem. |
 | Publicação v1 | | 2 Pods prontos; API v1 | |
 | Escala | | 3 Pods prontos | |
 | Exclusão e recuperação | | Nome antigo removido; novo Pod criado | |
