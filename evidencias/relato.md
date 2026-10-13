@@ -88,11 +88,13 @@ Imagem: v2
 
 ### Etapa 9: Pipeline v3
 
-**Comando:** 
+**Comando:** `python scripts/pipeline_local.py v3 3`
 
 **Esperado:** Smoke OK e estado final v3
 
-**Observado:** 
+**Observado:** Imagem `entrega-local:v3`; 3 Pods `1/1 Running`; `status-v3.json` retorna `"version": "v3"`, mensagem mantida
+
+![](./assets/print-etapa-09.PNG)
 
 ## Respostas
 
