@@ -57,11 +57,14 @@ Python 3.14.5 / Docker 29.5.2 / Minikube v1.39.0
 
 ### Etapa 6: Atualização v2
 
-**Comando:** 
+**Comando:** `python scripts/smoke.py http://127.0.0.1:8080 --version v2 --message "Entrega configurada pelo grupo." --output evidencias/v2-status.json`
 
 **Esperado:** 3 Pods v2 prontos
 
-**Observado:** 
+**Observado:** 3 Pods `1/1 Running`; `v2-status.json` retorna `"version": "v2"`, mensagem mantida
+
+Número de revisão: 3 3
+Imagem: v2
 
 ### Etapa 7: Incidente
 
