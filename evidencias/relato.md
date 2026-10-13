@@ -53,6 +53,8 @@ Python 3.14.5 / Docker 29.5.2 / Minikube v1.39.0
 
 **Observado:** Após recriar os Pods, `/api/status` retorna `"version": "v1"`, `"message": "Entrega configurada pelo grupo."`
 
+![](./assets//print-etapa-05.PNG)
+
 ### Etapa 6: Atualização v2
 
 **Comando:** 
