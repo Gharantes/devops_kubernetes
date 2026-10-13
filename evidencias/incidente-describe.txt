@@ -1,0 +1,66 @@
+﻿Name:             entrega-5c4465d9db-z5nkc
+Namespace:        aula-k8s
+Priority:         0
+Service Account:  default
+Node:             devops-k8s/192.168.49.2
+Start Time:       Mon, 12 Oct 2026 21:54:13 -0300
+Labels:           app=entrega
+                  pod-template-hash=5c4465d9db
+Annotations:      kubectl.kubernetes.io/restartedAt: 2026-10-12T20:48:33-03:00
+Status:           Running
+IP:               10.244.0.13
+IPs:
+  IP:           10.244.0.13
+Controlled By:  ReplicaSet/entrega-5c4465d9db
+Containers:
+  web:
+    Container ID:   containerd://feec70d1f9a0a847ee9bf62f2a4aa41c2ed799b0d95435e8f21f08d7d61bc39f
+    Image:          entrega-local:quebrada
+    Image ID:       sha256:3e7b280c6e16ddc371682352da7da482cc2add4928318e91fbdb08349bbfb36e
+    Port:           8000/TCP (http)
+    Host Port:      0/TCP (http)
+    State:          Running
+      Started:      Mon, 12 Oct 2026 21:54:13 -0300
+    Ready:          False
+    Restart Count:  0
+    Limits:
+      cpu:     500m
+      memory:  96Mi
+    Requests:
+      cpu:      100m
+      memory:   32Mi
+    Liveness:   http-get http://:http/healthz delay=0s timeout=1s period=5s successThreshold=1 failureThreshold=3
+    Readiness:  http-get http://:http/readyz delay=0s timeout=1s period=2s successThreshold=1 failureThreshold=1
+    Startup:    http-get http://:http/healthz delay=0s timeout=1s period=2s successThreshold=1 failureThreshold=30
+    Environment Variables from:
+      entrega-config  ConfigMap  Optional: false
+    Environment:
+      POD_NAME:  entrega-5c4465d9db-z5nkc (v1:metadata.name)
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-q2pvc (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-q2pvc:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                  From               Message
+  ----     ------     ----                 ----               -------
+  Normal   Scheduled  2m5s                 default-scheduler  Successfully assigned aula-k8s/entrega-5c4465d9db-z5nkc to devops-k8s
+  Normal   Pulled     2m5s                 kubelet            spec.containers{web}: Container image "entrega-local:quebrada" already present on machine and can be accessed by the pod
+  Normal   Created    2m5s                 kubelet            spec.containers{web}: Container created
+  Normal   Started    2m5s                 kubelet            spec.containers{web}: Container started
+  Warning  Unhealthy  74s (x25 over 2m2s)  kubelet            spec.containers{web}: Readiness probe failed: HTTP probe failed with statuscode: 503

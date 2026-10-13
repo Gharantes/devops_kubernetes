@@ -68,11 +68,13 @@ Imagem: v2
 
 ### Etapa 7: Incidente
 
-**Comando:** 
+**Comando:** `.\scripts\kube.ps1 describe pod $podNovo`; `curl.exe -i http://127.0.0.1:8081/healthz` e `/readyz`
 
 **Esperado:** Novo Running 0/1; healthz 200, readyz 503
 
-**Observado:** 
+**Observado:** Pod `entrega-5c4465d9db-z5nkc` (imagem `quebrada`) `0/1 Running`, 0 reinícios; `/healthz` 200 e `/readyz` 503; os 3 Pods v2 continuam `1/1`
+
+![](./assets/print-etapa-07.PNG)
 
 ### Etapa 8: Rollback
 
