@@ -63,7 +63,7 @@ Python 3.14.5 / Docker 29.5.2 / Minikube v1.39.0
 
 **Observado:** 3 Pods `1/1 Running`; `v2-status.json` retorna `"version": "v2"`, mensagem mantida
 
-Número de revisão: 3 3
+Número de revisão: 3
 Imagem: v2
 
 ### Etapa 7: Incidente
