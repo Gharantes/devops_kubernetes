@@ -78,11 +78,13 @@ Imagem: v2
 
 ### Etapa 8: Rollback
 
-**Comando:** 
+**Comando:** `.\scripts\kube.ps1 rollout undo deployment/entrega --to-revision=3`
 
 **Esperado:** v2 restaurada
 
-**Observado:** 
+**Observado:** Imagem `entrega-local:v2`; 3 Pods `1/1 Running`, Pod quebrado removido; `rollback-status.json` retorna `"version": "v2"`, mensagem mantida. Revisão passou a 5.
+
+![](./assets/print-etapa-08.PNG)
 
 ### Etapa 9: Pipeline v3
 
