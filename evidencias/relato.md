@@ -2,7 +2,7 @@
 
 Integrantes: Guilherme Harmatiuk Arantes
 Data: 12/10/2026
-Distribuição Linux:
+Distribuição Linux: não se aplica — Windows 10 com Docker Desktop (WSL2)
 Python 3.14.5 / Docker 29.5.2 / Minikube v1.39.0
 
 ## Etapas
@@ -21,7 +21,7 @@ Python 3.14.5 / Docker 29.5.2 / Minikube v1.39.0
 
 **Esperado:** 2 Pods prontos; API v1
 
-**Observado:** 2 Pods `1/1 Running`; `/api/status` retorna `"version": "v1"`
+**Observado:** 2 Pods `1/1 Running`; `/api/status` retorna `"version": "v1"`. A página mostra `v1` e a instância `entrega-5c8cd478b5-p6wc8`, um dos 2 Pods criados na publicação
 
 ![](./assets/print-etapa-02-1.PNG)
 
@@ -111,4 +111,9 @@ Imagem: v2
 
 ## Divergências e correções
 
-Descreva hipótese, comando de diagnóstico, sinal observado e correção.
+| Problema | Hipótese | Diagnóstico | Sinal observado | Correção |
+|---|---|---|---|---|
+| `docker build` falhou | Docker Desktop fechado | Mensagem de erro do build | `failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine` | Abrir o Docker Desktop |
+| `apply` falhou | Cluster parado após o Docker fechar | `minikube -p devops-k8s status` | `host: Stopped`, `apiserver: Stopped` | `minikube -p devops-k8s start` |
+| `kube.ps1` bloqueado em terminal novo | Política de execução do PowerShell | Mensagem de erro | `running scripts is disabled on this system` | `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` |
+| Port-forward caiu na Etapa 5 | O Pod do encaminhamento foi recriado pelo `rollout restart` | Saída do port-forward | `lost connection to pod` | Reabrir o port-forward |
