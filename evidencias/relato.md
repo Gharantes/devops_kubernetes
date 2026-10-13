@@ -111,9 +111,42 @@ Imagem: v2
 
 ## Divergências e correções
 
-| Problema | Hipótese | Diagnóstico | Sinal observado | Correção |
-|---|---|---|---|---|
-| `docker build` falhou | Docker Desktop fechado | Mensagem de erro do build | `failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine` | Abrir o Docker Desktop |
-| `apply` falhou | Cluster parado após o Docker fechar | `minikube -p devops-k8s status` | `host: Stopped`, `apiserver: Stopped` | `minikube -p devops-k8s start` |
-| `kube.ps1` bloqueado em terminal novo | Política de execução do PowerShell | Mensagem de erro | `running scripts is disabled on this system` | `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` |
-| Port-forward caiu na Etapa 5 | O Pod do encaminhamento foi recriado pelo `rollout restart` | Saída do port-forward | `lost connection to pod` | Reabrir o port-forward |
+### `docker build` falhou
+
+**Hipótese:** Docker Desktop fechado
+
+**Diagnóstico:** Mensagem de erro do build
+
+**Sinal observado:** `failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine`
+
+**Correção:** Abrir o Docker Desktop
+
+### `apply` falhou
+
+**Hipótese:** Cluster parado após o Docker fechar
+
+**Diagnóstico:** `minikube -p devops-k8s status`
+
+**Sinal observado:** `host: Stopped`, `apiserver: Stopped`
+
+**Correção:** `minikube -p devops-k8s start`
+
+### `kube.ps1` bloqueado em terminal novo
+
+**Hipótese:** Política de execução do PowerShell
+
+**Diagnóstico:** Mensagem de erro
+
+**Sinal observado:** `running scripts is disabled on this system`
+
+**Correção:** `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
+
+### Port-forward caiu na Etapa 5
+
+**Hipótese:** O Pod do encaminhamento foi recriado pelo `rollout restart`
+
+**Diagnóstico:** Saída do port-forward
+
+**Sinal observado:** `lost connection to pod`
+
+**Correção:** Reabrir o port-forward
