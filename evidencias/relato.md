@@ -180,3 +180,13 @@ Imagem: v2
 **Sinal observado:** `lost connection to pod`
 
 **Correção:** Reabrir o port-forward
+
+### Namespace removido antes de salvar o estado final
+
+**Hipótese:** O namespace `aula-k8s` foi excluído antes de gerar `final-pods.txt` e `final-deployment.yaml`
+
+**Diagnóstico:** `.\scripts\kube.ps1 get pods -l app=entrega`
+
+**Sinal observado:** `No resources found in aula-k8s namespace.`
+
+**Correção:** `python scripts/pipeline_local.py v4 3` (a tag v3 já existia), depois os comandos do encerramento; por isso o estado final registrado é v4

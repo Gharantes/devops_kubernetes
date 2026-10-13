@@ -24,7 +24,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
         - name: web
-          image: entrega-local:v3
+          image: entrega-local:v4
           imagePullPolicy: Never
           ports:
             - name: http
